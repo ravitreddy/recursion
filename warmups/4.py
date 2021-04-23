@@ -1,14 +1,14 @@
-def reverseOrder(s,n):
-    if n==1:
-        return s[0]
-    return s[n-1]+reverseOrder(s,n-1)
+def palindrome(s,start,end):
+    if start == end or start +1 == end or len(s)==0:
+        return "palindrome"
+    if s[start]==s[end]:
+        return palindrome(s,start+1,end-1)
+    return "Not palindrome"
 
 def main():
     s=input()
     n=len(s)
-    rev=reverseOrder(s,n)
-    if s==rev:
-        print('Palindrome')
-    else:
-        print('not palindrome')
+    start=0
+    end=n-1
+    print(palindrome(s,start,end))
 main()
